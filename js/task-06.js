@@ -7,6 +7,8 @@ console.log(inputEl);
 
 inputEl.addEventListener('blur', onInputBlur);
 
+// пишемо функцію: якщо довжина значення інпуту, яка приведена до рядко строго = значенню інпут ключа data-length - додай клас valid i видали invalid, якщо він там був. В іншому випадку зроби навпаки
+
 function onInputBlur(event) {
   if (event.currentTarget.value.length.toString() === inputEl.dataset.length) {
      inputEl.classList.add('valid');
@@ -15,10 +17,7 @@ function onInputBlur(event) {
      inputEl.classList.add('invalid');
      inputEl.classList.remove('valid');
 }
-}
-
-console.log(inputEl.value.length)
-
+};
 
 
 
