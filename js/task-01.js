@@ -6,11 +6,8 @@ const listItemEl = document.querySelectorAll('.item ul'); //кожен ul дит
 
 console.log('Number of categories:', itemEl.length);
 
-console.log('Category:', titleItemEl[0].textContent);
-console.log('Elements:', listItemEl[0].children.length)
+for (let i = 0; i < itemEl.length; i += 1){
+  console.log('Category:', titleItemEl[i].textContent);
+console.log('Elements:', listItemEl[i].children.length)
+}
 
-console.log('Category:', titleItemEl[1].textContent);
-console.log('Elements:', listItemEl[1].children.length)
-
-console.log('Category:', titleItemEl[2].textContent);
-console.log('Elements:', listItemEl[2].children.length)
