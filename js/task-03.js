@@ -15,11 +15,14 @@ const images = [
 
 const listEl = document.querySelector('.gallery')
 
+listEl.style = 'list-style: none; display: flex;'
+
+
 function makeItemLinkEl(obj) {
   images.forEach((element) => {
    element.alt = element.alt.split(' ').join('-');
     
-  listEl.insertAdjacentHTML('beforeend', `<li class='gallery__item'><img class='gallery__img' src=${element.url} alt=${element.alt} width = 300></li>`)
+  listEl.insertAdjacentHTML('beforeend', `<li style='margin-right: 20px;' class='gallery__item'><img style="display: block; box-shadow: 10px 10px 25px 0px rgba(31, 2, 31, 0.53);" class='gallery__img' src=${element.url} alt=${element.alt} width = 300></li>`)
   })
 }
 

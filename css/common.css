@@ -22,17 +22,3 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
-
-.gallery {
-  list-style: none;
-  display: flex;
-}
-
-.gallery__item {
-  margin-right: 20px;
-}
-
-.gallery__img {
-  display: block;
-  box-shadow: 10px 10px 25px 0px rgba(31, 2, 31, 0.53);
-}
