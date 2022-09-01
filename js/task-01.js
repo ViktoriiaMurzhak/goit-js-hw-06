@@ -1,13 +1,14 @@
-const itemEl = document.querySelectorAll('.item'); //кожна li дитина від ul#categories
+// робимо змінні для тегів
 
-const titleItemEl = document.querySelectorAll('.item h2'); //кожен h2 дитина itemEl
+const itemEl = document.querySelectorAll('.item'); //кожна li 
+const titleItemEl = document.querySelectorAll('.item h2'); //
+const listItemEl = document.querySelectorAll('.item ul'); //
 
-const listItemEl = document.querySelectorAll('.item ul'); //кожен ul дитина itemEl
-
+// виводимо довжину item
 console.log('Number of categories:', itemEl.length);
 
+// виводимо кожну категорію 
 for (let i = 0; i < itemEl.length; i += 1){
   console.log('Category:', titleItemEl[i].textContent);
 console.log('Elements:', listItemEl[i].children.length)
-}
-
+};
