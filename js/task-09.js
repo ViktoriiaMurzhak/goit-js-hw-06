@@ -12,9 +12,10 @@ const spanEl = document.querySelector('.color');
 
 // вішаємо слухача і через стрілочну функцію присвоюємо бекграунду значення функції рандомних кольорів, і це ж значення присвоюємо текстовому контенту спана
 btnChangeColor.addEventListener('click', event => {
-  bodyEl.style.background = getRandomHexColor();
+  const color = getRandomHexColor();
+  bodyEl.style.background = color;
 
-  spanEl.textContent = getRandomHexColor();
+  spanEl.textContent = color;
 });
 
 
