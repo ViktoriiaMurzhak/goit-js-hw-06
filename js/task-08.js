@@ -11,15 +11,14 @@ function onFormSubmit(event) {
   event.preventDefault();
 
   const formData = new FormData(event.currentTarget);
-  formData.email = inputEmailEl.value;
-  formData.password = inputPasswordEl.value;
-  console.log(formData);
+  formData.email = inputEmailEl.value.trim();
+  formData.password = inputPasswordEl.value.trim();
 
   // для виведення алертів, якщо якесь поле пусте
-  if (inputEmailEl.value === '' || inputPasswordEl.value === '') {
-    alert('Заповніть усі поля!');
+  if (inputEmailEl.value.trim() === '' || inputPasswordEl.value.trim() === '') {
+    return alert('Заповніть усі поля!');
   }
-// очищаємо
-   event.currentTarget.reset();
-}
-
+  // очищаємо
+  console.log(formData);
+  event.currentTarget.reset();
+};
