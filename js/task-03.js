@@ -14,20 +14,17 @@ const images = [
 ];
 
 const listEl = document.querySelector('.gallery');
-
 listEl.style = 'list-style: none; display: flex;';
 
-const makeItemLinkEl = images => {
-  return images.map(element => {
-    element.alt = element.alt.split(' ').join('-');
-
+const makeItemLinkEl = images
+  .map((element) => {
     const htmlString = `<li style='margin-right: 20px;' class='gallery__item'><img style="display: block; box-shadow: 10px 10px 25px 0px rgba(31, 2, 31, 0.53);" class='gallery__img' src=${element.url} alt=${element.alt} width = 300></li>`;
 
-    listEl.insertAdjacentHTML('beforeend', htmlString);
-  });
-};
-
-makeItemLinkEl(images);
+    return htmlString;
+  })
+    .join('');
+  
+  listEl.insertAdjacentHTML('beforeend', makeItemLinkEl);
 
 // ! =====================================
 // Варіант 2 (іншим способом)
