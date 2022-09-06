@@ -19,8 +19,7 @@ function onFormSubmit(event) {
   if (inputEmailEl.value === '' || inputPasswordEl.value === '') {
     alert('Заповніть усі поля!');
   }
-
+// очищаємо
    event.currentTarget.reset();
-
 }
 
