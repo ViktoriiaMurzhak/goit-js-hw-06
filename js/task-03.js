@@ -11,22 +11,23 @@ const images = [
     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'Group of Horses Running',
   },
-]
+];
 
-const listEl = document.querySelector('.gallery')
+const listEl = document.querySelector('.gallery');
 
-listEl.style = 'list-style: none; display: flex;'
+listEl.style = 'list-style: none; display: flex;';
 
+const makeItemLinkEl = images => {
+  return images.map(element => {
+    element.alt = element.alt.split(' ').join('-');
 
-function makeItemLinkEl(obj) {
-  images.forEach((element) => {
-   element.alt = element.alt.split(' ').join('-');
-    
-  listEl.insertAdjacentHTML('beforeend', `<li style='margin-right: 20px;' class='gallery__item'><img style="display: block; box-shadow: 10px 10px 25px 0px rgba(31, 2, 31, 0.53);" class='gallery__img' src=${element.url} alt=${element.alt} width = 300></li>`)
-  })
-}
+    const htmlString = `<li style='margin-right: 20px;' class='gallery__item'><img style="display: block; box-shadow: 10px 10px 25px 0px rgba(31, 2, 31, 0.53);" class='gallery__img' src=${element.url} alt=${element.alt} width = 300></li>`;
 
-makeItemLinkEl(images)
+    listEl.insertAdjacentHTML('beforeend', htmlString);
+  });
+};
+
+makeItemLinkEl(images);
 
 // ! =====================================
 // Варіант 2 (іншим способом)
@@ -42,13 +43,12 @@ makeItemLinkEl(images)
 //   imageEl.src = element.url;
 //   imageEl.alt = element.alt;
 //   imageEl.width = 300;
-  
+
 //   itemEl.appendChild(imageEl);
 //   console.log(itemEl);
-  
+
 //   listEl.appendChild(itemEl);
 //   })
 // }
 
 // makeItemLinkEl(images)
-
